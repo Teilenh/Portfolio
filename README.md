@@ -1,2 +1,2 @@
 # studious-pancake
-Funny name by Github, this repo is for stock what I learn for Web dev 
+Funny name for Github, this repository will store what I learn for web development  
