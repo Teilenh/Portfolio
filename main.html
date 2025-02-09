@@ -3,21 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base pour Portfolio</title>
+    <title>Acceuil</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <div class="page-title" id="pagetitle"></div>
+    <nav>
+        <ul>
+            <li><a href="#">Acceuil</a></li>
+            <li><a href="#a-propos">Á propos</a></li>
+            <li><a href="GuideHtml.html">HTML</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    
+    </nav>
     <h1>Tentative de portfolio</h1>
-    <p>Voici une liste de mes compétences :</p>
+    <p>Découvrez <a href="https://github.com/TeilenH" target="_blank">Mon GitHub</a> pour voir mes différents projets, en cours, finis/aboutis, </p>
 
-    <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Apprentissage en cours...</li>
-    </ul>
-
-    <p>Découvrez <a href="https://github.com/TeilenH" target="_blank">Mon github</a> Pour voir mes différent projet, en cours, finit/aboutis, </p>
-
-    <img src="image1.jpg" alt="Une image sympa">
-</body>
+    <img src="image1.png" alt="Une image sympa">
+    <!-- Section "a-propos", indique certaine infos -->
+    <h2 id="a-propos"> tableaux qui reprend mes différente Formation</h2>
+        <table>
+            <tr>
+                <th>Formation</th>
+                <th>Durée - date</th>
+                <th>Réussie</th>
+            </tr>
+            <tr>
+                <td>ITFC Félicien Rops - photographe - enseignement Technique</td>
+                <td>2 ans - 2021/2023</td>
+                <td>CESS obtenu</td>
+            </tr>
+            <tr>
+                <td>CEDEG - Technicien Réseaux</td>
+                <td>10 mois - septembre 2023/ juin 2024</td>
+                <td>Réussie - j'ai décrocher la validation de compétences suite a la formation</td>
+            </tr>    
+        </table>
+    <h2 id="contact"> Ici un formulaire </h2>
+        <form>
+            <label for="nom">Nom : </label>
+            <input type="text" id="Nom" name="nom" required>
+            
+            <label for="pseudo">pseudo : </label>
+            <input type="text" id="pseudo" name="pseudo" required><br><br>
+        
+            <input type="checkbox" id="conditions" name="conditions" : </label>
+            <label for="conditions">coche à cocher </label><br><br>
+            
+            <button type="soumetre">Cliquer </button>
+        </form>
+        
+    </body>
 
 </html>
