@@ -1,7 +1,37 @@
 html {
     scroll-behavior: smooth;
 }
-nav ul{
+
+* {
+    margin: 2px;
+    padding-top: 10px;
+    padding-bottom: 2px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f8fb;
+    color: rgb(4, 20, 75);
+    margin: 20px;
+    font-size: larger;
+}
+
+h1 {
+    color: midnightblue;
+    font-family: Arial, sans-serif;
+}
+
+p, ul {
+    font-size: 18px;
+}
+
+a {
+    color: gray;
+    text-decoration: none;
+}
+
+nav ul {
     list-style: none;
     padding: 15px;
     display: flex;
@@ -9,85 +39,65 @@ nav ul{
     background-color: #095aaa;
     border-radius: 10px;
 }
+
 nav a {
     color: aliceblue;
-    text-decoration:dashed;
+    text-decoration: dashed;
     padding: 10px 15px;
 }
-nav a:hover{
+
+nav a:hover {
     background-color: #0f50bf;
     border-radius: 10px;
 }
-body {
-    display: flex;
-    flex-direction: column;
-    align-items:unset;
-    justify-content: unset;
-    font-family: 'Roboto', sans-serif;
-    font-size: larger;
-    background-color: #f4f8fb;
-    color: rgb(4, 20, 75);
-    margin: 20px;
-}
-
-h1 {
-    font-family: Arial, sans-serif;
-    color: midnightblue;
-
-}
-p, ul {
-    font-size: 18px;
-
-}
-a {
-    color: gray;
-
-}
 
 img {
-    width: 175px; 
-    height: auto; /* Conserve la proportion de l'image */
+    width: 175px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px; 
 }
-table{
+
+table {
     width: 100%;
     border-collapse: collapse;
     border-radius: 15px;
-    border-color: #0f50d4;
 }
-th, td{
-    border: 1px solid #0f50d4;
+
+th, td {
     padding: 8px;
     text-align: left;
+    border: 1px solid #0f50d4;
 }
-    
 
-
- form {
+form {
     background-color: antiquewhite;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 1px 0px 10px rgba(0, 0, 0, 0.1);
-    max-width: 300;
- }
- button{
-    width: 90%;
+    max-width: 300px;
+}
+
+input, button {
     padding: 8px;
+    border-radius: 5px;
     margin: 10px;
     margin-top: 5px;
-    border: 1px solid #0f50d4;
-    border-radius: 5px;
-    background-color: #0f50d4;
-    color: white;
-    cursor: pointer;
- }
+}
+
 input {
     padding: 5px;
     border: 2px solid slateblue;
-    border-radius: 5px;
-
-
 }
- button:hover{
-    background-color: #0091df;
 
- }
+button {
+    width: 90%;
+    background-color: #0f50d4;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0091df;
+}
