@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terminal Portfolio</title>
+    <title>My projects</title>
     <style>
         * {
             margin: 0;
@@ -223,7 +223,7 @@
                     new class extends Command {
                         constructor() { super('uname', 'Informations système'); }
                         execute(args, terminal) {
-                            terminal.displayOutput('Linux terminal-portfolio 5.15.0-portfolio #1 SMP Web Terminal x86_64 GNU/Linux');
+                            terminal.displayOutput('Linux 6.16.8.0-portfolio #1 SMP Web Terminal x86_64 GNU/Linux');
                         }
                     },
                     
@@ -365,14 +365,14 @@
                         execute(args, terminal) {
                             terminal.displayOutput('À propos de moi', 'success');
                             terminal.displayOutput('');
-                            terminal.displayOutput('Passionné de Linux et de développement, je crée des solutions');
-                            terminal.displayOutput('techniques innovantes et explore les technologies open source.');
+                            terminal.displayOutput('Passionné par Linux et le jeux vidéos,');
+                            terminal.displayOutput('j\'explore les technologies de l\'open source. en Utilise certaine, et joue avec les composante de mon systéme linux');
                             terminal.displayOutput('');
-                            terminal.displayOutput('Spécialisé dans:');
+                            terminal.displayOutput('J\'apprends:');
                             terminal.displayOutput('• Administration système Linux');
-                            terminal.displayOutput('• Développement Python (Qt6, web)');
-                            terminal.displayOutput('• Auto-hébergement et home server');
-                            terminal.displayOutput('• Personnalisation et optimisation système');
+                            terminal.displayOutput('• Développement Python (Qt6 pour l\'aspect graphique, la base)');
+                            terminal.displayOutput('• Auto-hébergement et home server, hébergement d\'un Pihole et de SearXNG');
+                            terminal.displayOutput('• Personnalisation et optimisation système, avec l\'usage d\'Alpine linux au quotidien, son optimisation et l\'usage du TWM Sway,');
                             terminal.displayOutput('');
                             terminal.displayOutput('Tapez "cat README.md" pour plus d\'informations.', 'info');
                         }
@@ -387,33 +387,12 @@
                             terminal.displayOutput('   Infrastructure auto-hébergée avec services multiples');
                             terminal.displayOutput('');
                             terminal.displayOutput('2. Linux Ricing & Configurations');
-                            terminal.displayOutput('   Personnalisation avancée d\'environnements Linux');
+                            terminal.displayOutput('   Personnalisation avancée d\'environnements Linux, TWM et DE');
                             terminal.displayOutput('');
                             terminal.displayOutput('3. PyKemon - Jeu Python Qt6');
-                            terminal.displayOutput('   Application de jeu avec interface graphique moderne');
+                            terminal.displayOutput('   Application de jeu avec interface graphique moderne et "old school" avec Tkinter');
                             terminal.displayOutput('');
                             terminal.displayOutput('Utilisez "ls projects" et "cat projects/*" pour plus de détails.', 'info');
-                        }
-                    },
-                    
-                    new class extends Command {
-                        constructor() { super('skills', 'Mes compétences'); }
-                        execute(args, terminal) {
-                            terminal.displayOutput('Compétences techniques', 'success');
-                            terminal.displayOutput('');
-                            terminal.displayOutput('Langages de programmation:');
-                            terminal.displayOutput('• Python (intermédiaire) - Qt6');
-
-terminal.displayOutput('• Bash/Shell (débutant) - Scripting système');
-                            terminal.displayOutput('• HTML/CSS (débutant) - Design responsive');
-                            terminal.displayOutput('');
-                            terminal.displayOutput('Systèmes & Outils:');
-                            terminal.displayOutput('• Linux (Arch, Alpine, Debian)');
-                            terminal.displayOutput('• containerisation (debutant)');
-                            terminal.displayOutput('• Git (débutant)');
-                            terminal.displayOutput('• Nginx, firewall');
-                            terminal.displayOutput('');
-                            terminal.displayOutput('Explorez "ls skills" pour plus de détails.', 'info');
                         }
                     },
                     
@@ -424,8 +403,6 @@ terminal.displayOutput('• Bash/Shell (débutant) - Scripting système');
                             terminal.displayOutput('');
                             terminal.displayOutput('GitHub: https://github.com/teilenh');
                             terminal.displayOutput('');
-                            terminal.displayOutput('N\'hésitez pas à me contacter pour discuter de projets', 'info');
-                            terminal.displayOutput('ou collaborations techniques !', 'info');
                         }
                     }
                 ];
@@ -437,12 +414,27 @@ terminal.displayOutput('• Bash/Shell (débutant) - Scripting système');
             static getCommands() {
                 return [
                     new class extends Command {
-                        constructor() { super('sudo', 'Easter egg - Commande sudo'); }
-                        execute(args, terminal) {
-                            if (args.length === 0) {
-                                terminal.displayOutput('sudo: a password is required', 'error');
-                                return;
-                            }
+                        constructor() { super('sudo', 'élévation de priviléges'); }
+                         printLines(terminal, lines, delay = 250, callback) {
+                                            let i = 0;
+                                            const step = () => {
+                                                if (i >= lines.length) {
+                                                    if (typeof callback === 'function') callback();
+                                                    return;
+                                                }
+                                                terminal.displayOutput(lines[i]);
+                                                i++;
+                                                setTimeout(step, delay);
+                                            };
+                                            step();
+                                        }
+                        
+                                        execute(args, terminal) {
+                                            // sudo sans argument
+                                            if (!args || args.length === 0) {
+                                                terminal.displayOutput('sudo: a password is required', 'error');
+                                                return;
+                                            }
 
                             const command = args.join(' ');
                             
