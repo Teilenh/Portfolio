@@ -415,37 +415,92 @@
                 return [
                     new class extends Command {
                         constructor() { super('sudo', 'élévation de priviléges'); }
-                         printLines(terminal, lines, delay = 250, callback) {
-                                            let i = 0;
-                                            const step = () => {
-                                                if (i >= lines.length) {
-                                                    if (typeof callback === 'function') callback();
-                                                    return;
-                                                }
-                                                terminal.displayOutput(lines[i]);
-                                                i++;
-                                                setTimeout(step, delay);
-                                            };
-                                            step();
-                                        }
-                        
-                                        execute(args, terminal) {
-                                            // sudo sans argument
-                                            if (!args || args.length === 0) {
-                                                terminal.displayOutput('sudo: a password is required', 'error');
-                                                return;
-                                            }
-
-                            const command = args.join(' ');
-                            
-                            if (command === 'rm -rf /') {
-                                terminal.displayOutput('sudo: rm -rf /: operation not permitted', 'error');
-                                terminal.displayOutput('');
-                                terminal.displayOutput('Nice try! 😄', 'warning');
-                                terminal.displayOutput('Ce portfolio est protégé contre les destructions accidentelles.', 'info');
-                            } else {
-                                terminal.displayOutput(`sudo: ${command}: command not found`, 'error');
+                        // utilitaire d'affichage séquentiel (léger délai pour réalisme)
+                        printLines(terminal, lines, delay = 120, callback) {
+                            let i = 0;
+                            const step = () => {
+                                if (i >= lines.length) {
+                                    if (typeof callback === 'function') callback();
+                                    return;
+                                }
+                                terminal.displayOutput(lines[i]);
+                                i++;
+                                setTimeout(step, delay);
+                            };
+                            step();
+                        }
+        
+                        timestamp() {
+                            // format type syslog : "Oct  1 12:34:56"
+                            const d = new Date();
+                            const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+                            const mon = months[d.getMonth()];
+                            const day = String(d.getDate()).padStart(2, ' ');
+                            const time = d.toTimeString().split(' ')[0];
+                            return `${mon} ${day} ${time}`;
+                        }
+        
+                        execute(args, terminal) {
+                            // sudo sans argument
+                            if (!args || args.length === 0) {
+                                // Réponse standard courte
+                                terminal.displayOutput('sudo: a password is required', 'error');
+                                return;
                             }
+        
+                            const command = args.join(' ').trim();
+        
+                            // motifs dangereux
+                            const dangerousPatterns = [
+                                /(^|\s)rm\s+-rf\s+\/(\s|$|;)/i,
+                                /(^|\s)dd\s+if=/i,
+                                /(^|\s)mkfs(\.|\s|$)/i,
+                                /:\(\)\s*{\s*:.*}\s*;:\s*/i, // fork-bomb
+                                /(^|\s)wget\s+.*sh(\s|$)/i
+                            ];
+        
+                            const ts = this.timestamp();
+        
+                            // Si commande dangereuse détectée
+                            if (dangerousPatterns.some(rx => rx.test(command))) {
+                                // Message verbeux, dans le style des logs sudo/pam/syslog
+                                const lines = [
+                                    `${ts} localhost sudo:      ${terminal.user || 'guest'} : TTY=pts/0 ; PWD=${terminal.currentDirectory || '~'} ; USER=root ; COMMAND=${command}`,
+                                    `${ts} localhost sudo: pam_unix(sudo:session): session opened for user root by ${terminal.user || 'guest'}(uid=0)`,
+                                    `sudo: ${command}: operation not permitted`,
+                                    '',
+                                    'This incident will be reported.',
+                                    `(${ts}) auth: sudo attempt blocked - command matches restricted pattern.`,
+                                ];
+                                this.printLines(terminal, lines, 140);
+                                return;
+                            }
+        
+                            // Pour les commandes "connues" : réponse claire mais "système"
+                            const knownLike = /(^|\s)(reboot|shutdown|systemctl|service|apt|pacman|dnf|passwd|useradd|usermod|chmod|chown)(\s|$)/i;
+                            if (knownLike.test(command)) {
+                                const lines = [
+                                    `${ts} localhost sudo: ${terminal.user || 'guest'} : TTY=pts/0 ; PWD=${terminal.currentDirectory || '~'} ; USER=root ; COMMAND=${command}`,
+                                    `${ts} localhost sudo: pam_unix(sudo:auth): authentication failure; logname=${terminal.user || 'guest'} uid=1000 euid=0 tty=pts/0 ruser= rhost=  user=root`,
+                                    '',
+                                    `sudo: ${command}: command not permitted in this sandbox environment.`,
+                                    'Advice: run this command on your local machine if you intend to actually perform it.'
+                                ];
+                                this.printLines(terminal, lines, 160, () => {
+                                    terminal.displayOutput('Hint: use a mock command instead (ex: "simulate rm -rf /").', 'info');
+                                });
+                                return;
+                            }
+        
+                            // Cas général : sudo suivi d'une commande inconnue
+                            const generic = [
+                                `${ts} localhost sudo: ${terminal.user || 'guest'} : TTY=pts/0 ; PWD=${terminal.currentDirectory || '~'} ; USER=root ; COMMAND=${command}`,
+                                `${ts} localhost sudo: pam_unix(sudo:auth): authentication failure; authentication token manipulation error`,
+                                `sudo: ${command}: command not found`,
+                                '',
+                                'Note: This is an interactive demo. No privileged actions are executed.'
+                            ];
+                            this.printLines(terminal, generic, 140);
                         }
                     }
                 ];
