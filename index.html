@@ -537,13 +537,11 @@ Bienvenue sur mon portfolio interactif !
 - Utilisez 'help' pour voir toutes les commandes
 - Tapez 'about' pour en savoir plus sur moi
 - Tapez 'projects' pour voir mes projets
-- Tapez 'skills' pour mes compétences
+- Tapez 'skills' pour mes compétences ( WIP, cmd non existante ) 
 
 ## Projets principaux
-- Home Server personnel
-- Configurations Linux (ricing)
-- Applications Python Qt6
-- Projets web
+- Home Server personnel, PiHole, SearXNG, dans le futur Gitea, NTP et d'autre service
+- Configurations Linux (ricing, optimisation)
 
 Bonne exploration !`
                             },
@@ -557,10 +555,11 @@ Bonne exploration !`
 Description: Serveur personnel auto-hébergé
 Technologies: Linux, Docker, Nginx
 Fonctionnalités:
-- Hébergement web
+- Hébergement web ( a venir, pour remplacé github pages )
 - Stockage cloud personnel
-- Services média
+- PiHole, petit service deblocage de tracker et permet du firewalling trés simplefier
 - Monitoring système
+- SearWNG, un metamoteur de recherche auto héberger
 
 Status: En cours de développement`
                                     },
@@ -569,10 +568,10 @@ Status: En cours de développement`
                                         content: `# Linux Ricing & Configurations
 
 Description: Personnalisation avancée d'environnements Linux
-Technologies: i3wm, polybar, rofi, zsh
+Technologies: TWM, avec : Sway/Hyprland, Waybar, rofi, zsh, 
 Fonctionnalités:
 - Thèmes personnalisés
-- Scripts d'automatisation
+- Scripts pour capture d'écran, clipboard, gamemode, gestion des thémes, etc
 - Configurations dotfiles
 - Optimisations système
 
@@ -585,10 +584,9 @@ Status: Maintenance continue`
 Description: Jeu inspiré de Pokémon en Python
 Technologies: Python, Qt6, SQLite
 Fonctionnalités:
-- Interface graphique moderne
+- Interface graphique moderne et "old School"
 - Système de combat
-- Gestion de base de données
-- Sauvegarde de progression
+- Gestion d'équipes, et sauvegarde des équipe au sein d'un fichier
 
 Status: Prototype fonctionnel`
                                     }
@@ -601,22 +599,10 @@ Status: Prototype fonctionnel`
                                         type: 'file',
                                         content: `# Langages de programmation
 
-## Maîtrisés
-- Python (Avancé)
-- JavaScript (Intermédiaire)
-- Bash/Shell (Avancé)
-- HTML/CSS (Avancé)
 
 ## En apprentissage
-- Go
-- Rust
-- TypeScript
-
-## Outils et frameworks
-- Qt6/PySide6
-- Django/Flask
-- Node.js
-- Docker`
+- Python (débutant - intermédiaire)
+- HTML/CSS (débutant - intermédiaire)`
                                     }
                                 }
                             }
@@ -641,6 +627,9 @@ Status: Prototype fonctionnel`
                     } else if (e.key === 'ArrowDown') {
                         e.preventDefault();
                         this.navigateHistory(1);
+                    } else if (e.key === 'Tab') {
+                        e.preventDefault(); // empêcher le focus sur le prochain élément
+                        this.handleAutocomplete();
                     }
                 });
 
@@ -680,7 +669,20 @@ Status: Prototype fonctionnel`
                     this.input.value = this.commandHistory[this.historyIndex];
                 }
             }
-
+            handleAutocomplete() {
+                const input = this.input.value.trim();
+                if (input === '') return;
+            
+                const matchingCommands = Object.keys(this.commands).filter(cmd => cmd.startsWith(input));
+            
+                if (matchingCommands.length === 1) {
+                    // une seule correspondance → compléter automatiquement
+                    this.input.value = matchingCommands[0] + ' ';
+                } else if (matchingCommands.length > 1) {
+                    // plusieurs correspondances → afficher les options
+                    this.displayOutput(matchingCommands.join('    '), 'info');
+                }
+            }
             displayCommand(command) {
                 const line = document.createElement('div');
                 line.className = 'output-line';
