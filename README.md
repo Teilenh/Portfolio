@@ -9,7 +9,7 @@
 Un site interactif simulant un **terminal Linux**, conçu comme une vitrine technique de mes projets et de mes compétences.  
 L’objectif est de proposer une expérience immersive pour naviguer dans mes travaux comme si l’on utilisait un shell.
 
----
+
 
 ## :rocket: Démo en ligne
 
