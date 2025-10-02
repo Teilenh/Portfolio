@@ -10,8 +10,7 @@ Un site interactif simulant un **terminal Linux**, conçu comme une vitrine tech
 L’objectif est de proposer une expérience immersive pour naviguer dans mes travaux comme si l’on utilisait un shell.
 
 
-
-## :rocket: Démo en ligne
+### :rocket: Démo en ligne
 
 :point_right: [Accéder à la démo ici](https://teilenh.github.io/Portfolio/)  
 
