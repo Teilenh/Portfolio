@@ -79,9 +79,7 @@ L’objectif est de proposer une expérience immersive pour naviguer dans mes tr
 
 ## :pushpin: Notes
 
-Ce projet est à la fois :  
-- une démonstration technique (**simulation CLI en navigateur**),  
+Ce projet est à la fois :   
 - une présentation de mes projets,  
-- et un exercice de personnalisation inspiré de l’environnement Linux.  
-
+- et un exercice de personnalisation web inspiré de l’environnement Linux.  
 ---
