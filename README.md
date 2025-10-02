@@ -1,58 +1,75 @@
-# Interface de présentation en ligne de commande
+# :desktop: Interface de Présentation en Ligne de Commande
 
-Un site interactif simulant un terminal Linux, conçu comme une vitrine de mes projets et de mes compétences.
-
----
-
-## 🖥️ Démo
-
-Version en ligne accessible ici :  
-[Terminal Portfolio - Démo](https://teilenh.github.io/Portfolio/)
-
-Simulation du CLI dans un navigateur web. toutes Les commandes ne sont pas implémentées.
+[![Demo](https://img.shields.io/badge/Demo-Live-blue?style=flat&logo=linux)](https://teilenh.github.io/Portfolio/)  
+[![License](https://img.shields.io/github/license/Teilenh/Portfolio)](./LICENSE)  
+![GitHub last commit](https://img.shields.io/github/last-commit/Teilenh/Portfolio)  
+![GitHub issues](https://img.shields.io/github/issues/Teilenh/Portfolio)  
+![GitHub pull requests](https://img.shields.io/github/issues-pr/Teilenh/Portfolio)  
+![GitHub repo size](https://img.shields.io/github/repo-size/Teilenh/Portfolio)
 
 ---
 
-## 🚀 Fonctionnalités principales
+## :book: Description
 
-- **Commandes système** : `whoami`, `pwd`, `date`, `uptime`, `uname`, `clear`
-- **Commandes fichiers** : `ls`, `cd`, `cat`
-- **Commandes spécifique** : `about`, `projects`
-- **Fonctionnalités avancées** :
-  - Historique des commandes (flèches haut/bas)
-  - Autocomplétion, pour les commandes seulement (touche `Tab`)
-  - Gestion de répertoires et fichiers simulés
+Un site interactif simulant un **terminal Linux**, conçu comme une vitrine technique de mes projets et de mes compétences.  
+L’objectif est de proposer une expérience immersive pour naviguer dans mes travaux comme si l’on utilisait un shell.
 
 ---
 
-## 📂 Mes Projets cités
+## :rocket: Démo en ligne
 
-### 1. Home Server Personnel
-- Serveur auto-hébergée
-- PiHole, SearXNG, Monitoring, Stockage, peu servir de serveur de jeu,
-  
-### 2. Linux Ricing & Configurations
-- Personnalisation d'un Gestionnaire de fenetre (Sway/Hyprland, Waybar, dotfiles, scripts)
-- Optimisation et usage quotidien du système
-    github - https://github.com/Teilenh/Dotfiles-sway
-  
-### 3. PyKemon - Jeu Python avec Qt6
-- Jeu inspiré de Pokémon
-- Interface graphique Qt6 ( et une old school, avec Tkinter) et gestion d’équipes ( sauvegarde d'une seule équipe possible ) 
-  Github : https://github.com/Teilenh/PyKemon
-  
+:point_right: [Accéder à la démo ici](https://teilenh.github.io/Portfolio/)  
+
+> Simulation CLI dans un navigateur web (toutes les commandes ne sont pas encore implémentées).
+
 ---
 
-## 📊 Statistiques GitHub
+## :gear: Fonctionnalités principales
+
+- **Commandes système** : `whoami`, `pwd`, `date`, `uptime`, `uname`, `clear`  
+- **Commandes fichiers** : `ls`, `cd`, `cat`  
+- **Commandes spécifiques** : `about`, `projects`  
+- **Fonctionnalités avancées** :  
+  - Historique des commandes (flèches ↑ / ↓)  
+  - Autocomplétion des commandes (touche `Tab`)  
+  - Gestion de répertoires et fichiers simulés  
+
+---
+
+## :open_file_folder: Projets mis en avant
+
+### :wrench: Home Server Personnel
+- Mise en place d’un serveur auto-hébergé  
+- Services : **PiHole, SearXNG, Monitoring, stockage**  
+- Expérimentations : peut également servir de **serveur de jeu**  
+
+---
+
+### :art: Linux Ricing & Configurations
+- Personnalisation avancée d’un gestionnaire de fenêtres (**Sway / Hyprland**, Waybar, dotfiles, scripts)  
+- Optimisation et usage quotidien du système Linux  
+- :link: [Dotfiles - Sway](https://github.com/Teilenh/Dotfiles-sway)  
+
+---
+
+### :video_game: PyKemon – Jeu Python avec Qt6
+- Jeu inspiré de **Pokémon**  
+- Interface graphique avec **Qt6** et version rétro en **Tkinter**  
+- Gestion et sauvegarde d’équipes (une seule équipe active possible)  
+- :link: [PyKemon sur GitHub](https://github.com/Teilenh/PyKemon)  
+
+---
+
+## :bar_chart: Statistiques GitHub
 
 ![GitHub stars](https://img.shields.io/github/stars/Teilenh/Portfolio?style=social)
+![GitHub forks](https://img.shields.io/github/forks/Teilenh/Portfolio?style=social)
 ![GitHub watchers](https://img.shields.io/github/watchers/Teilenh/Portfolio?style=social)
 
 ---
 
-## 🛠️ Technologies
+## :tools: Technologies utilisées
 
-### Langages utilisés
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
@@ -60,4 +77,11 @@ Simulation du CLI dans un navigateur web. toutes Les commandes ne sont pas impl�
 
 ---
 
-Projet orienté démonstration technique et personnalisation inspirée de l’environnement Linux.
+## :pushpin: Notes
+
+Ce projet est à la fois :  
+- une démonstration technique (**simulation CLI en navigateur**),  
+- une présentation de mes projets,  
+- et un exercice de personnalisation inspiré de l’environnement Linux.  
+
+---
