@@ -64,11 +64,8 @@ L’objectif est de proposer une expérience immersive pour naviguer dans mes tr
 ---
 
 ## 🔧 Technologies utilisées
+<img src="HTML5.svg" width="40"/> <img src="CSS3.svg" width="40"/> <img src="JS.svg" width="40"/>
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=plastic&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/>
 
 ---
 
