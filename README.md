@@ -2,8 +2,6 @@
 
 [![Demo](https://img.shields.io/badge/Demo-Live-blue?style=flat&logo=linux)](https://teilenh.github.io/Portfolio/)   ![GitHub repo size](https://img.shields.io/github/repo-size/Teilenh/Portfolio)
 
-![GitHub last commit](https://img.shields.io/github/last-commit/Teilenh/Portfolio)  ![GitHub issues](https://img.shields.io/github/issues/Teilenh/Portfolio)  ![GitHub pull requests](https://img.shields.io/github/issues-pr/Teilenh/Portfolio) 
-
 ---
 
 ## :book: Description
@@ -59,9 +57,9 @@ L’objectif est de proposer une expérience immersive pour naviguer dans mes tr
 
 ## :bar_chart: Statistiques GitHub
 
-![GitHub stars](https://img.shields.io/github/stars/Teilenh/Portfolio?style=social)
-![GitHub forks](https://img.shields.io/github/forks/Teilenh/Portfolio?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/Teilenh/Portfolio?style=social)
+![GitHub stars](https://img.shields.io/github/stars/Teilenh/Portfolio?style=social) ![GitHub watchers](https://img.shields.io/github/watchers/Teilenh/Portfolio?style=social)
+
+![GitHub last commit](https://img.shields.io/github/last-commit/Teilenh/Portfolio)  ![GitHub issues](https://img.shields.io/github/issues/Teilenh/Portfolio)  ![GitHub pull requests](https://img.shields.io/github/issues-pr/Teilenh/Portfolio) 
 
 ---
 
