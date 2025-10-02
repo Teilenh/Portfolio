@@ -30,11 +30,11 @@ Simulation du CLI dans un navigateur web. toutes Les commandes ne sont pas impl�
 ### 1. Home Server Personnel
 - Serveur auto-hébergée
 - PiHole, SearXNG, Monitoring, Stockage, peu servir de serveur de jeu,
-- 
+  
 ### 2. Linux Ricing & Configurations
 - Personnalisation d'un Gestionnaire de fenetre (Sway/Hyprland, Waybar, dotfiles, scripts)
 - Optimisation et usage quotidien du système
-  github - https://github.com/Teilenh/Dotfiles-sway
+    github - https://github.com/Teilenh/Dotfiles-sway
   
 ### 3. PyKemon - Jeu Python avec Qt6
 - Jeu inspiré de Pokémon
