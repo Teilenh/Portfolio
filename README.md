@@ -38,14 +38,14 @@ L’objectif est de proposer une expérience immersive pour naviguer dans mes tr
 - Services : **PiHole, SearXNG, Monitoring, stockage**, **Serveur de jeu**, Nginx  
 - Expérimentations : testé mes compétence en réseaux, routage, port logicielle, redirection de port
   
---
+
 
 ### :art: Linux Ricing & Configurations
 - Personnalisation d’un gestionnaire de fenêtres (**Sway / Hyprland**, Waybar, dotfiles, scripts)  
 - Optimisation et usage quotidien du système Linux  
 - :link: [Dotfiles - Sway](https://github.com/Teilenh/Dotfiles-sway)  
 
---
+
 
 ### :video_game: PyKemon – Jeu Python avec Qt6
 - Jeu inspiré de Pokémon  
