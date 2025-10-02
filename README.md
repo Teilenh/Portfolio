@@ -1,4 +1,4 @@
-# Linux Terminal
+# Interface de présentation en ligne de commande
 
 Portfolio interactif simulant une interface en ligne de commande Linux.
 
@@ -34,11 +34,13 @@ Simulation du CLI dans un navigateur web. toutes Les commandes ne sont pas impl�
 ### 2. Linux Ricing & Configurations
 - Personnalisation d'un Gestionnaire de fenetre (Sway/Hyprland, Waybar, dotfiles, scripts)
 - Optimisation et usage quotidien du système
-
+  github - https://github.com/Teilenh/Dotfiles-sway
+  
 ### 3. PyKemon - Jeu Python avec Qt6
 - Jeu inspiré de Pokémon
 - Interface graphique Qt6 ( et une old school, avec Tkinter) et gestion d’équipes ( sauvegarde d'une seule équipe possible ) 
-
+  Github : https://github.com/Teilenh/PyKemon
+  
 ---
 
 ## 📊 Statistiques GitHub
