@@ -35,22 +35,22 @@ L’objectif est de proposer une expérience immersive pour naviguer dans mes tr
 
 ### :wrench: Home Server Personnel
 - Mise en place d’un serveur auto-hébergé  
-- Services : **PiHole, SearXNG, Monitoring, stockage**  
-- Expérimentations : peut également servir de **serveur de jeu**  
-
+- Services : **PiHole, SearXNG, Monitoring, stockage**, **Serveur de jeu**, Nginx  
+- Expérimentations : testé mes compétence en réseaux, routage, port logicielle, redirection de port
+  
 ---
 
 ### :art: Linux Ricing & Configurations
-- Personnalisation avancée d’un gestionnaire de fenêtres (**Sway / Hyprland**, Waybar, dotfiles, scripts)  
+- Personnalisation d’un gestionnaire de fenêtres (**Sway / Hyprland**, Waybar, dotfiles, scripts)  
 - Optimisation et usage quotidien du système Linux  
 - :link: [Dotfiles - Sway](https://github.com/Teilenh/Dotfiles-sway)  
 
 ---
 
 ### :video_game: PyKemon – Jeu Python avec Qt6
-- Jeu inspiré de **Pokémon**  
+- Jeu inspiré de Pokémon  
 - Interface graphique avec **Qt6** et version rétro en **Tkinter**  
-- Gestion et sauvegarde d’équipes (une seule équipe active possible)  
+- Gestion et sauvegarde d’équipes (une seule équipe sauvegardée possible)  
 - :link: [PyKemon sur GitHub](https://github.com/Teilenh/PyKemon)  
 
 ---
