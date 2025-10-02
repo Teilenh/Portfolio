@@ -1,6 +1,6 @@
 # Interface de présentation en ligne de commande
 
-Portfolio interactif simulant une interface en ligne de commande Linux.
+Un site interactif simulant un terminal Linux, conçu comme une vitrine de mes projets et de mes compétences.
 
 ---
 
